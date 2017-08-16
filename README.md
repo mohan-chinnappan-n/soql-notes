@@ -72,8 +72,11 @@ SELECT CreatedDate, Amount
 error: *Unknown error parsing query*
 
 ```sql
-SELECT Id FROM Opportunity 
-   WHERE DATCloseDate = CreatedDate
+SELECT Id, CloseDate, CreatedDate
+FROM Opportunity  
+ WHERE CloseDate = 2017-05-15
+ AND CreatedDate = 2017-07-07
+LIMIT 2
 ```
 
 Data type of **CloseDate** is **date** while data type of **CreatedDate** is **datetime**
@@ -84,13 +87,14 @@ Data type of **CloseDate** is **date** while data type of **CreatedDate** is **d
 
 ### Solution
 
-Create a formula field returning Date and taking in DateTime;
+Create a formula field (dt_createdDate__c) returning Date and taking in DateTime;
 
 ![](./img/datavalue_formula.png)
 
 
 
-
+Now:
+![date converted query](./img/date_converted_query.png)
 
 
 
