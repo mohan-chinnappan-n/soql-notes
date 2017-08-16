@@ -18,7 +18,7 @@ SELECT CALENDAR_YEAR(CreatedDate), SUM(Amount)
 
  **convertTimezone()** in a date function to convert dateTime fields to the user’s time zone.
  
- Example: Note convertTimezone() to be used in date function: HOUR_IN_DAY
+ Example: Note convertTimezone() to be used in date function, example: HOUR_IN_DAY
  
  ```sql
  SELECT HOUR_IN_DAY(convertTimezone(CreatedDate)) hr, SUM(Amount) sum
@@ -38,7 +38,7 @@ SELECT CALENDAR_YEAR(CreatedDate), SUM(Amount)
 
 ### References
 
-1.[Force.com SOQL and SOSL Reference] (https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_date_functions.htm)
+1.[Force.com SOQL and SOSL Reference](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_date_functions.htm)
 
 
 ### Questions
@@ -73,7 +73,7 @@ error: *Unknown error parsing query*
 
 ```sql
 SELECT Id FROM Opportunity 
-   WHERE CloseDate = date_CreatedDate__c
+   WHERE DATCloseDate = CreatedDate
 ```
 
 Data type of **CloseDate** is **date** while data type of **CreatedDate** is **datetime**
