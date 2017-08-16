@@ -14,6 +14,26 @@ SELECT CALENDAR_YEAR(CreatedDate), SUM(Amount)
 
 ![](./img/cal-year-sum-1.png)
 
+#### convertTimezone()
+
+ **convertTimezone()** in a date function to convert dateTime fields to the user’s time zone.
+ 
+ Example: Note convertTimezone() used in date function: HOUR_IN_DAY
+ 
+ ```sql
+ SELECT HOUR_IN_DAY(convertTimezone(CreatedDate)) hr, SUM(Amount) sum
+		FROM Opportunity
+	GROUP BY HOUR_IN_DAY(convertTimezone(CreatedDate))
+ ```
+ 
+ You can use convertTimezone() on directly on DateTime field. Following query will **not** work:
+ 
+```sql
+
+ SELECT convertTimezone(CreatedDate)
+		FROM Opportunity
+```
+
 
 
 ### References
@@ -23,7 +43,7 @@ SELECT CALENDAR_YEAR(CreatedDate), SUM(Amount)
 
 ### Questions
 
-1. Why this query does not work: 
+1. Why this query does not work?
 
 error: *Date-aggregate functions can only be selected in **group***ed queries*
 
