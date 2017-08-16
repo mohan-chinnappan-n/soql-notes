@@ -79,7 +79,7 @@ FROM Opportunity
 LIMIT 2
 ```
 
-Data type of **CloseDate** is **date** while data type of **CreatedDate** is **datetime**
+Data-type of **CloseDate** is **date** while data-type of **CreatedDate** is **datetime**
 
 ![Describe of Oppty](./img/desc_oppty.png)
 
