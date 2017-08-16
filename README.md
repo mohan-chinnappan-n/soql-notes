@@ -67,6 +67,30 @@ SELECT CreatedDate, Amount
 ![Filter by year](./img/filter-by-year.png)
 
 
+2. Why this query does not work?
+
+```sql
+SELECT Id FROM Opportunity 
+   WHERE CloseDate = CreatedDate
+```
+
+Data type of **CloseDate** is **date** while data type of **CreatedDate** is **datetime**
+
+![Describe of Oppty](./img/desc_oppty.png)
+
+
+
+### Solution
+
+
+
+
+
+
+
+
+
+
 
 
 
