@@ -16,7 +16,7 @@ SELECT CALENDAR_YEAR(CreatedDate), SUM(Amount)
 
 #### convertTimezone()
 
- **convertTimezone()** in a date function to convert dateTime fields to the user’s time zone.
+We can use **convertTimezone()** in a date function to convert dateTime fields to the user’s time zone.
  
  Example: Note convertTimezone() to be used in date function, example: HOUR_IN_DAY
  
