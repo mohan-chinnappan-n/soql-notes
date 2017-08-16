@@ -18,7 +18,7 @@ SELECT CALENDAR_YEAR(CreatedDate), SUM(Amount)
 
  **convertTimezone()** in a date function to convert dateTime fields to the user’s time zone.
  
- Example: Note convertTimezone() used in date function: HOUR_IN_DAY
+ Example: Note convertTimezone() to be used in date function: HOUR_IN_DAY
  
  ```sql
  SELECT HOUR_IN_DAY(convertTimezone(CreatedDate)) hr, SUM(Amount) sum
@@ -26,7 +26,7 @@ SELECT CALENDAR_YEAR(CreatedDate), SUM(Amount)
 	GROUP BY HOUR_IN_DAY(convertTimezone(CreatedDate))
  ```
  
- You can use convertTimezone() on directly on DateTime field. Following query will **not** work:
+ You **can't** use convertTimezone() on directly on DateTime field. Following query will **not** work:
  
 ```sql
 
@@ -69,9 +69,11 @@ SELECT CreatedDate, Amount
 
 2. Why this query does not work?
 
+error: *Unknown error parsing query*
+
 ```sql
 SELECT Id FROM Opportunity 
-   WHERE CloseDate = CreatedDate
+   WHERE CloseDate = date_CreatedDate__c
 ```
 
 Data type of **CloseDate** is **date** while data type of **CreatedDate** is **datetime**
@@ -82,6 +84,9 @@ Data type of **CloseDate** is **date** while data type of **CreatedDate** is **d
 
 ### Solution
 
+Create a formula field returning Date and taking in DateTime;
+
+![](./img/datavalue_formula.png)
 
 
 
